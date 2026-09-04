@@ -1,0 +1,385 @@
+" ============================================================
+" IDEAVIM CONFIG
+" ============================================================
+
+let mapleader = ' '
+
+
+" ============================================================
+" PLUGINS
+" ============================================================
+
+set surround
+set commentary
+set targets
+set CamelCaseMotion
+set easymotion
+
+
+" ============================================================
+" BASIC VIM
+" ============================================================
+
+set clipboard^=unnamed,unnamedplus
+
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+
+set matchpairs+=<:>
+
+set ideajoin
+
+
+" Clear search highlight
+nnoremap <Esc> :nohlsearch<CR>
+
+" Redo
+nnoremap U <C-r>
+
+" Black-hole register
+nnoremap \ "_
+
+" Paste over selection without overwriting yank register
+xnoremap p P
+
+" Repeat character search using '
+noremap ' ;
+
+
+" ============================================================
+" CAMELCASE / SNAKE_CASE WORD MOTIONS
+" ============================================================
+
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+map <silent> ge <Plug>CamelCaseMotion_ge
+
+
+" ============================================================
+" EASYMOTION
+" ============================================================
+
+" Jump forward by word
+map <leader>j <Plug>(easymotion-w)
+
+" Jump backward by word
+map <leader>k <Plug>(easymotion-b)
+
+" Jump forward to character
+map <leader>f <Plug>(easymotion-f)
+
+" Jump backward to character
+map <leader>F <Plug>(easymotion-F)
+
+
+" ============================================================
+" CONFIG
+" ============================================================
+
+nnoremap <leader>cc :edit ~/.config/ideavim/ideavimrc<CR>
+
+nnoremap <leader>cs :source ~/.config/ideavim/ideavimrc<CR>:nohlsearch<CR>
+
+
+" ============================================================
+" CORE NAVIGATION
+" ============================================================
+
+" Space Space -> Go To File
+map <leader><leader> <Action>(GotoFile)
+
+" Project tree
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Terminal
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+
+" ============================================================
+" TABS
+" ============================================================
+
+" Previous tab
+map H <Action>(PreviousTab)
+
+" Next tab
+map L <Action>(NextTab)
+
+" Close current editor
+map <leader>qq <Action>(CloseContent)
+
+" Close all editors
+map <leader>qa <Action>(CloseAllEditors)
+
+
+" ============================================================
+" GO TO
+" ============================================================
+
+" Declaration / definition
+map <leader>gd <Action>(GotoDeclaration)
+
+" References / usages
+map <leader>gr <Action>(FindUsages)
+
+" Type declaration
+map <leader>gy <Action>(GotoTypeDeclaration)
+
+" Implementation
+map <leader>gi <Action>(GotoImplementation)
+
+" Test
+map <leader>gt <Action>(GotoTest)
+
+" Super method
+map <leader>gm <Action>(GotoSuperMethod)
+
+" Go to line
+map <leader>gl <Action>(GotoLine)
+
+
+" ============================================================
+" SEARCH
+" ============================================================
+
+" Hover / documentation
+map <leader>sh <Action>(ShowHoverInfo)
+
+" Find in project
+map <leader>sf <Action>(FindInPath)
+
+" Replace in project
+map <leader>sr <Action>(ReplaceInPath)
+
+" Go to class
+map <leader>sc <Action>(GotoClass)
+
+" Go to symbol
+map <leader>ss <Action>(GotoSymbol)
+
+" Search IntelliJ actions
+map <leader>sa <Action>(GotoAction)
+
+
+" ============================================================
+" REFACTOR
+" ============================================================
+
+" Rename
+map <leader>rn <Action>(RenameElement)
+
+" Extract method
+map <leader>rm <Action>(ExtractMethod)
+
+" Introduce variable
+map <leader>rv <Action>(IntroduceVariable)
+
+" Introduce field
+map <leader>rf <Action>(IntroduceField)
+
+" Change signature
+map <leader>rs <Action>(ChangeSignature)
+
+" Refactor quick menu
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+
+" ============================================================
+" CODE ACTIONS
+" ============================================================
+
+" Quick fix / intentions
+map <leader>ca <Action>(ShowIntentionActions)
+
+" Reformat code
+map <leader>cf <Action>(ReformatCode)
+
+" Optimize imports
+map <leader>oi <Action>(OptimizeImports)
+
+" Rearrange code
+map <leader>ra <Action>(RearrangeCode)
+
+" Surround With...
+map <leader>sw <Action>(SurroundWith)
+
+" Generate constructor/getter/setter/etc.
+map <S-space> <Action>(Generate)
+
+" Complete statement
+map <C-[> <Action>(EditorCompleteStatement)
+
+
+" ============================================================
+" CODE INFO
+" ============================================================
+
+" Quick implementations
+map <leader>im <Action>(QuickImplementations)
+
+" Quick type definition
+map <leader>td <Action>(QuickTypeDefinition)
+
+" Expression type
+map <leader>ti <Action>(ExpressionTypeInfo)
+
+" File structure
+map <leader>oo <Action>(FileStructurePopup)
+
+
+" ============================================================
+" RUN / DEBUG
+" ============================================================
+
+" Run
+map <leader>xr <Action>(Run)
+
+" Debug
+map <leader>xd <Action>(Debug)
+
+" Stop
+map <leader>xs <Action>(Stop)
+
+" Toggle breakpoint
+map <leader>xb <Action>(ToggleLineBreakpoint)
+
+" Run Anything
+map <leader>xa <Action>(RunAnything)
+
+
+" ============================================================
+" ERRORS
+" ============================================================
+
+" Next error
+map <leader>en <Action>(GotoNextError)
+
+" Previous error
+map <leader>ep <Action>(GotoPreviousError)
+
+
+" ============================================================
+" HISTORY / LOCATIONS
+" ============================================================
+
+" Jump to last change
+map <leader>lc <Action>(JumpToLastChange)
+
+" Recent locations
+map <leader>ll <Action>(RecentLocations)
+
+" Recent files
+map <leader>lr <Action>(RecentFiles)
+
+" Back
+map <leader>hb <Action>(Back)
+
+" Forward
+map <leader>hf <Action>(Forward)
+
+
+" ============================================================
+" METHOD NAVIGATION
+" ============================================================
+
+map <A-[> <Action>(MethodUp)
+map <A-]> <Action>(MethodDown)
+
+
+" ============================================================
+" SPLITS
+" ============================================================
+
+" Vertical split
+map <leader>wv <Action>(SplitVertically)
+
+" Horizontal split
+map <leader>wh <Action>(SplitHorizontally)
+
+" Close current split
+map <leader>ww <Action>(Unsplit)
+
+" Close all other splits
+map <leader>wa <Action>(UnsplitAll)
+
+" Move between splits
+map <A-h> <C-w>h
+map <A-j> <C-w>j
+map <A-k> <C-w>k
+map <A-l> <C-w>l
+
+
+" ============================================================
+" MOVE CODE
+" ============================================================
+
+" Move line up
+map <C-k> <Action>(MoveLineUp)
+
+" Move line down
+map <C-j> <Action>(MoveLineDown)
+
+" Move statement down
+map <C-i> <Action>(MoveStatementDown)
+
+" Move statement up
+map <C-o> <Action>(MoveStatementUp)
+
+" Duplicate line
+map <S-k> <Action>(EditorDuplicateLines)
+
+
+" ============================================================
+" FILES
+" ============================================================
+
+" New file
+map <leader>nf <Action>(NewFile)
+
+" New directory
+map <leader>nd <Action>(NewDir)
+
+" New Kotlin class/file
+map <leader>nk <Action>(Kotlin.NewFile)
+
+" Rename file
+map <leader>re <Action>(RenameFile)
+
+" New scratch file
+map <leader>fs <Action>(NewScratchFile)
+
+" Reveal current file in Project tree
+map <leader>fe <Action>(SelectInProjectView)
+
+
+" ============================================================
+" COPY PATH
+" ============================================================
+
+" Copy absolute path
+map <leader>cp <Action>(CopyAbsolutePath)
+
+" Copy filename
+map <leader>cn <Action>(CopyFileName)
+
+
+" ============================================================
+" USAGES
+" ============================================================
+
+" Find usages
+map <leader>ug <Action>(FindUsages)
+
+" Show usages popup
+map <leader>uu <Action>(ShowUsages)
+
+
+" ============================================================
+" IDE
+" ============================================================
+
+" Restart IntelliJ
+map <leader>ri <Action>(RestartIde)
