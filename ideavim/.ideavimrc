@@ -1,0 +1,211 @@
+" ============================================================
+" LEADER
+" ============================================================
+
+let mapleader = ' '
+
+
+" ============================================================
+" BASIC VIM BEHAVIOUR
+" ============================================================
+
+set clipboard^=unnamed,unnamedplus
+
+set hlsearch
+set ignorecase
+set smartcase
+set incsearch
+
+set matchpairs+=<:>
+
+set ideajoin
+
+" Remove search highlight
+nnoremap <Esc> :nohlsearch<CR>
+
+" Redo
+nnoremap U <C-r>
+
+" Black-hole register
+nnoremap \ "_
+
+" Paste over selection without replacing default register
+xnoremap p P
+
+" Repeat character search with '
+noremap ' ;
+
+
+" ============================================================
+" WORD MOTIONS
+" ============================================================
+
+map w [w
+map e ]w
+map b [b
+map ge ]b
+
+
+" ============================================================
+" CONFIG
+" ============================================================
+
+nnoremap <leader>cc :edit ~/.ideavimrc<CR>
+nnoremap <leader>cs :source ~/.ideavimrc<CR>:nohlsearch<CR>
+
+
+" ============================================================
+" VS CODE STYLE NAVIGATION
+" ============================================================
+
+" Space Space -> Quick Open / Go To File
+map <leader><leader> <Action>(GotoFile)
+
+" Space e -> Explorer / Project tree
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Space t -> terminal
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+
+" ============================================================
+" CODE NAVIGATION
+" ============================================================
+
+" Space s h -> hover / quick documentation
+map <leader>sh <Action>(ShowHoverInfo)
+
+" Space g d -> definition/declaration
+map <leader>gd <Action>(GotoDeclaration)
+
+" Space g r -> references / usages
+map <leader>gr <Action>(FindUsages)
+
+" Extra useful navigation
+map <leader>gy <Action>(GotoTypeDeclaration)
+map <leader>gi <Action>(GotoImplementation)
+map <leader>gt <Action>(GotoTest)
+map <leader>gm <Action>(GotoSuperMethod)
+
+
+" ============================================================
+" REFACTORING / CODE ACTIONS
+" ============================================================
+
+" Space r n -> rename
+map <leader>rn <Action>(RenameElement)
+
+" Space c a -> code action / intentions / quick fix
+map <leader>ca <Action>(ShowIntentionActions)
+
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+
+
+" ============================================================
+" SEARCH
+" ============================================================
+
+" Similar to VS Code Search in Files
+map <leader>sr <Action>(ReplaceInPath)
+map <leader>sf <Action>(FindInPath)
+
+" Optional IntelliJ searches
+map <leader>sc <Action>(GotoClass)
+map <leader>ss <Action>(GotoSymbol)
+map <leader>sa <Action>(GotoAction)
+
+
+" ============================================================
+" TABS
+" ============================================================
+
+" Same as our VS Code H / L
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+
+" Close current editor
+map <leader>qq <Action>(CloseContent)
+
+" Close all editors
+map <leader>qa <Action>(CloseAllEditors)
+
+
+" ============================================================
+" SPLITS
+" ============================================================
+
+map <leader>wv <Action>(SplitVertically)
+map <leader>wh <Action>(SplitHorizontally)
+map <leader>ww <Action>(Unsplit)
+map <leader>wa <Action>(UnsplitAll)
+
+map <A-h> <C-w>h
+map <A-j> <C-w>j
+map <A-k> <C-w>k
+map <A-l> <C-w>l
+
+
+" ============================================================
+" ERRORS / HISTORY
+" ============================================================
+
+map <leader>en <Action>(GotoNextError)
+map <leader>ep <Action>(GotoPreviousError)
+
+map <leader>lc <Action>(JumpToLastChange)
+map <leader>ll <Action>(RecentLocations)
+
+map <S-h> <Action>(Back)
+map <S-l> <Action>(Forward)
+
+
+" ============================================================
+" CODE MANIPULATION
+" ============================================================
+
+map <leader>cf <Action>(ReformatCode)
+map <leader>oi <Action>(OptimizeImports)
+map <leader>ra <Action>(RearrangeCode)
+
+map <C-k> <Action>(MoveLineUp)
+map <C-j> <Action>(MoveLineDown)
+
+map <C-i> <Action>(MoveStatementUp)
+map <C-o> <Action>(MoveStatementDown)
+
+
+" ============================================================
+" FILES
+" ============================================================
+
+map <leader>nf <Action>(NewFile)
+map <leader>nd <Action>(NewDir)
+map <leader>re <Action>(RenameFile)
+
+map <leader>fs <Action>(NewScratchFile)
+
+map <leader>cp <Action>(CopyAbsolutePath)
+map <leader>cn <Action>(CopyFileName)
+
+
+" ============================================================
+" STRUCTURE / INFO
+" ============================================================
+
+map <leader>oo <Action>(FileStructurePopup)
+
+map <leader>im <Action>(QuickImplementations)
+map <leader>td <Action>(QuickTypeDefinition)
+map <leader>ti <Action>(ExpressionTypeInfo)
+
+
+" ============================================================
+" GENERATION
+" ============================================================
+
+map <S-space> <Action>(Generate)
+map <S-k> <Action>(EditorDuplicateLines)
+map <C-[> <Action>(EditorCompleteStatement)
