@@ -1,4 +1,3 @@
-
 require("monitors")
 require("autostart")
 require("enviromentVariables")
@@ -13,12 +12,5 @@ require("keybindings")
 require("misc")
 require("rules")
 
-
-
-
-
-
-
-
-
-
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

@@ -1,6 +1,5 @@
 /*
 
-
 !/.gitignore
 
 !/fish/
@@ -11,4 +10,10 @@
 !/tmux/
 !/wallpapers/
 !/ideavim/
- 
+
+# Fish: machine-local state, environment variables, and generated completions.
+/fish/fish_variables
+/fish/conf.d/env.fish
+/fish/conf.d/local.fish
+/fish/conf.d/private.fish
+/fish/completions/copilot.fish
