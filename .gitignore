@@ -2,6 +2,8 @@
 
 !/.gitignore
 
+!/starship.toml
+!/yazi
 !/fish/
 !/hypr/
 !/kitty/
@@ -17,3 +19,4 @@
 /fish/conf.d/local.fish
 /fish/conf.d/private.fish
 /fish/completions/copilot.fish
+/nvim/nvim.log

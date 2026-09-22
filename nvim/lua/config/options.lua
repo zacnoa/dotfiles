@@ -1,6 +1,6 @@
 
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+vim.o.autoread=true
 
 vim.opt.clipboard="unnamedplus"
 

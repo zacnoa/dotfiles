@@ -6,38 +6,12 @@
 hl.config({
 	general = {
 		gaps_in = 5,
-		gaps_out = 10,
-	},
-
-	decoration = {
-		rounding = 20,
-		rounding_power = 2,
-
-		shadow = {
-			enabled = false,
-			range = 4,
-			render_power = 3,
-			color = 0xee1a1a1a,
-		},
-
-		blur = {
-			enabled = true,
-			size = 3,
-			passes = 2,
-			vibrancy = 0.1696,
-		},
-	},
-})
-
-hl.config({
-	general = {
-		gaps_in = 2,
-		gaps_out = 10,
+		gaps_out = 5,
 
 		border_size = 2,
 
 		col = {
-			active_border = "rgba(214, 93, 14, 0.8)",
+			active_border = "rgba(0, 0, 0, 0)",
 			inactive_border = "rgba(595959aa)",
 		},
 
@@ -53,15 +27,15 @@ hl.config({
 hl.config({
 
 	decoration = {
-		rounding = 0,
-		rounding_power = 0,
+		rounding = 8,
+		rounding_power = 5,
 
 		-- Change transparency of focused and unfocused windows
-		active_opacity = 1.0,
-		inactive_opacity = 0.8,
+		active_opacity = 0.9,
+		inactive_opacity = 0.5,
 
 		shadow = {
-			enabled = true,
+			enabled = false,
 			range = 4,
 			render_power = 3,
 			color = 0xee1a1a1a,
@@ -69,8 +43,8 @@ hl.config({
 
 		blur = {
 			enabled = true,
-			size = 3,
-			passes = 1,
+			size = 2,
+			passes = 2,
 			vibrancy = 0.1696,
 		},
 	},

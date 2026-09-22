@@ -1,9 +1,5 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-# BEGIN_KITTY_THEME
-# Gruvbox Dark
-include current-theme.conf
-# END_KITTY_THEME
 
 #: Fonts {{{
 
@@ -1815,7 +1811,7 @@ include current-theme.conf
 
 #: Advanced {{{
 
-# shell .
+ shell fish
 
 #: The shell program to execute. The default value of . means to use
 #: the value of of the SHELL environment variable or if unset,
@@ -2221,6 +2217,8 @@ include current-theme.conf
 #: created by adding more levels separated by the :: characters.
 
 #: }}}
+
+
 
 #: OS specific tweaks {{{
 
@@ -3154,3 +3152,9 @@ include current-theme.conf
 #: }}}
 
 #: }}}
+
+
+# BEGIN_KITTY_THEME
+# Kanagawa_dragon
+include current-theme.conf
+# END_KITTY_THEME

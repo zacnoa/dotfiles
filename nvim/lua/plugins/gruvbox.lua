@@ -1,4 +1,4 @@
 return {
 
-	{ "ellisonleao/gruvbox.nvim", priority = 1000, opts = {} },
+	{ "ellisonleao/gruvbox.nvim", opts = {} },
 }
