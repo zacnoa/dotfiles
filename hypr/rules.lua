@@ -7,15 +7,6 @@
 
 -- Example window rules that are useful
 
-local suppressMaximizeRule = hl.window_rule({
-	-- Ignore maximize requests from all apps. You'll probably like this.
-	name = "suppress-maximize-events",
-	match = { class = ".*" },
-
-	suppress_event = "maximize",
-})
-suppressMaximizeRule:set_enabled(false)
-
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
 	name = "fix-xwayland-drags",
@@ -49,4 +40,22 @@ hl.window_rule({
 
 	move = "20 monitor_h-120",
 	float = true,
+})
+
+-- ~/.config/hypr/hyprland.lua
+hl.window_rule({
+  name = "kando",
+  match = {
+      class = "menu.kando.Kando",
+      title = "Kando Menu"
+  },
+  no_blur = true,
+  opaque = true,
+  move = {0, 0},
+  rounding = 0,
+  size = { "100%", "100%" },
+  border_size = 0,
+  no_anim = true,
+  float = true,
+  pin = true
 })

@@ -26,3 +26,4 @@ hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.49, spring = "e
 
 hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
+hl.animation({ leaf = "fadeSwitch", enabled = true, speed = 1.46, bezier = "linear" })

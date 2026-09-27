@@ -19,7 +19,13 @@ hl.config({
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
 hl.config({
+	binds = {
+		movefocus_cycles_fullscreen = true,
+	},
 	scrolling = {
 		fullscreen_on_one_column = true,
+		column_width = 0.5,
+		follow_focus = true,
+		focus_fit_method = 1,
 	},
 })

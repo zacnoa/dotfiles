@@ -24,7 +24,7 @@ return {
 				function()
 					require("fzf-lua").live_grep()
 				end,
-				desc = "Fuzzy search files with ripgrep",
+				desc = "Regex search files with ripgrep",
 			},
 			{
 				"<leader>sr",
