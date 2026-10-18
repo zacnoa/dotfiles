@@ -20,3 +20,4 @@
 /fish/conf.d/private.fish
 /fish/completions/copilot.fish
 /nvim/nvim.log
+/nvim/lazy-lock.json

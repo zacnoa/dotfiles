@@ -5,6 +5,8 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "black" },
+				rust = { "rustfmt" },
+				kotlin={"ktfmt"}
 			},
 
 			format_on_save = {

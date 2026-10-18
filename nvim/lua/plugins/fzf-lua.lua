@@ -20,18 +20,11 @@ return {
 				desc = "Open file fuzzy finder",
 			},
 			{
-				"<leader>rg",
+				"<leader>ss",
 				function()
 					require("fzf-lua").live_grep()
 				end,
-				desc = "Regex search files with ripgrep",
-			},
-			{
-				"<leader>sr",
-				function()
-					require("fzf-lua").grep()
-				end,
-				desc = "Fuzzy search files with ripgrep",
+				desc = "search files with ripgrep",
 			},
 		},
 		---@diagnostic enable: missing-fields

@@ -11,3 +11,4 @@ local registry = require("mason-registry")
   end
 
   vim.lsp.enable(servers)
+  vim.lsp.enable("rust_analyzer")
