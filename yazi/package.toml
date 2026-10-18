@@ -1,17 +1,9 @@
 [plugin]
 deps = []
 
-[[flavor.deps]]
-use = "muratoffalex/kanagawa-lotus"
-rev = "adc1be6"
-hash = "e07042bfc3177c35d5e0723414e8bfaf"
 
 [[flavor.deps]]
 use = "marcosvnmelo/kanagawa-dragon"
 rev = "b433f4a"
 hash = "b967c24a30350b1c5cd3a2ad5a7732e7"
 
-[[flavor.deps]]
-use = "malick-tammal/monokai"
-rev = "57be034"
-hash = "9fbb5104646853a933446746b88118a6"
