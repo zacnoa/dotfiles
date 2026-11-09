@@ -12,7 +12,6 @@ return {
 			filesystem = {
 				window = {
 					mappings = {
-						["<cr>"] = "opent_tabnew",
 						["l"] = "open",
 						["s"] = "open_split",
 						["v"] = "open_vsplit",
