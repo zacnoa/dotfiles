@@ -6,11 +6,17 @@ return {
 		---@module "fzf-lua"
 		---@type fzf-lua.Config|{}
 		---@diagnostic disable: missing-fields
-		opts = {
-			files = {
-				hidden = true,
-			},
-		},
+		opts = function()
+			return {
+				actions = {
+					files = {
+						true,
+						["ctrl-h"] = require("fzf-lua").actions.file_split,
+						["ctrl-s"] = false,
+					},
+				},
+			}
+		end,
 		keys = {
 			{
 				"<leader><leader>",

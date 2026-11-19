@@ -7,11 +7,11 @@
 
 -- Example window rules that are useful
 
-hl.window_rule({
-	name="terminal-opacity",
-	match={class="^(kitty)$"},
-	opacity="0.9"
-})
+-- hl.window_rule({
+-- 	name="terminal-opacity",
+-- 	match={class="^(kitty)$"},
+-- 	opacity="0.9"
+-- })
 
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
