@@ -12,6 +12,9 @@
 !/tmux/
 !/wallpapers/
 !/ideavim/
+!/helix/
+!packages.txt
+!packages-user.txt
 
 # Fish: machine-local state, environment variables, and generated completions.
 /fish/fish_variables

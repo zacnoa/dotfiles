@@ -6,7 +6,8 @@ return {
 				lua = { "stylua" },
 				python = { "black" },
 				rust = { "rustfmt" },
-				kotlin={"ktfmt"}
+				kotlin={"ktfmt"},
+				typescript={"prettier"}
 			},
 
 			format_on_save = {

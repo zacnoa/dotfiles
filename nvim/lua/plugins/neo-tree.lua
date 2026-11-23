@@ -20,17 +20,17 @@ return {
 			},
 		},
 		keys = {
-			-- {
-			-- 	"<leader>e",
-			-- 	function()
-			-- 		require("neo-tree.command").execute({
-			-- 			toggle = true,
-			-- 			source = "filesystem",
-			-- 			position = "left",
-			-- 		})
-			-- 	end,
-			-- 	desc = "File tree",
-			-- },
+			{
+				"<leader>e",
+				function()
+					require("neo-tree.command").execute({
+						toggle = true,
+						source = "filesystem",
+						position = "left",
+					})
+				end,
+				desc = "File tree",
+			},
 			{
 				"<leader>b",
 				function()

@@ -1,0 +1,6 @@
+google-chrome
+jetbrains-toolbox
+spotatui
+unityhub
+visual-studio-code-bin
+zen-browser-bin

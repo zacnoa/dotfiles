@@ -4,14 +4,6 @@ vim.keymap.set("n", "<leader>sr", function()
 	require("grug-far").open()
 end, { desc = "Search and replace" })
 
-vim.keymap.set("n", "<C-w>", "<cmd>q<cr>", {
-	desc = "Close window",
-	nowait=true,
-})
-vim.keymap.set("n", "<M-h>", "<C-w>h", { desc = "Go to left window" })
-vim.keymap.set("n", "<M-j>", "<C-w>j", { desc = "Go to window below" })
-vim.keymap.set("n", "<M-k>", "<C-w>k", { desc = "Go to window above" })
-vim.keymap.set("n", "<M-l>", "<C-w>l", { desc = "Go to right window" })
 
 
 vim.api.nvim_create_autocmd("LspAttach", {
