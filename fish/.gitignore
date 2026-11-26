@@ -1,0 +1,18 @@
+# Machine-local state, environment variables, and generated completions.
+/fish_variables
+/conf.d/env.fish
+/conf.d/local.fish
+/conf.d/private.fish
+/completions/copilot.fish
+
+# NVM files installed by Fisher.
+/conf.d/nvm.fish
+/completions/nvm.fish
+
+# Track only our own functions.
+/functions/*
+!/functions/__package_command.fish
+!/functions/install-yay.fish
+!/functions/install.fish
+!/functions/remove.fish
+!/functions/y.fish

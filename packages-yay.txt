@@ -1,7 +1,2 @@
-google-chrome
-jetbrains-toolbox
-spotatui
-unityhub
-visual-studio-code-bin
 vscode-langservers-extracted
 zen-browser-bin

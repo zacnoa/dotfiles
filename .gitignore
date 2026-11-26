@@ -15,12 +15,3 @@
 !/helix/
 !/packages-pacman.txt
 !/packages-yay.txt
-
-# Fish: machine-local state, environment variables, and generated completions.
-/fish/fish_variables
-/fish/conf.d/env.fish
-/fish/conf.d/local.fish
-/fish/conf.d/private.fish
-/fish/completions/copilot.fish
-/nvim/nvim.log
-/nvim/lazy-lock.json
