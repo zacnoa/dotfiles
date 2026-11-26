@@ -13,8 +13,8 @@
 !/wallpapers/
 !/ideavim/
 !/helix/
-!packages.txt
-!packages-user.txt
+!/packages-pacman.txt
+!/packages-yay.txt
 
 # Fish: machine-local state, environment variables, and generated completions.
 /fish/fish_variables
