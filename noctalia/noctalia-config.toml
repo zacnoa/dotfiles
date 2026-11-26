@@ -1,0 +1,197 @@
+[bar.default]
+background_opacity = 0.5999999865889549
+border = "surface"
+capsule_thickness = 0.5999999903142452
+end = [
+    "clipboard",
+    "notifications",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session"
+]
+margin_edge = 0
+margin_ends = 80
+radius_bottom_left = 24
+radius_bottom_right = 24
+radius_top_left = 0
+radius_top_right = 0
+start = [ "launcher", "wallpaper", "workspaces", "audio_visualizer" ]
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-0000000000000003" ]
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 768.0
+    cy = 816.0
+    output = "eDP-1"
+    placement_height = 864.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = false
+        bands = 32
+        color_1 = "secondary"
+        color_2 = "tertiary"
+        mirrored = true
+        reversed = false
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 64.0
+    box_width = 160.0
+    cx = 1424.0
+    cy = 336.0
+    output = "eDP-1"
+    placement_height = 864.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background = false
+        clock_style = "digital"
+        color = "tertiary"
+        font_family = ""
+        format = "{:%D %H:%M}"
+        shadow = true
+
+[dock]
+auto_hide = true
+layer = "overlay"
+pinned = [ "zen", "discord", "steam" ]
+position = "right"
+reserve_space = false
+show_instance_count = false
+show_running = false
+
+[hot_corners.bottom_left]
+action = "command"
+command = "noctalia msg panel-toggle control-center audio"
+
+[hot_corners.top_left]
+action = "command"
+command = "noctalia msg panel-toggle wallpaper"
+
+[hot_corners.top_right]
+action = "command"
+command = "noctalia msg panel-toggle control-center bluetooth"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 1920.000244140625
+    cy = 1922.000244140625
+    output = "HDMI-A-1"
+    placement_height = 2160.0
+    placement_width = 3840.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 640.0
+    cy = 601.0
+    output = "eDP-1"
+    placement_height = 864.0
+    placement_width = 1536.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_container"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[shell]
+app_icon_color = "error"
+font_family = "JetBrainsMono NF"
+settings_show_advanced = true
+telemetry_enabled = true
+
+    [shell.panel]
+    clipboard_placement = "attached"
+    control_center_placement = "floating"
+    control_center_position = "center"
+    launcher_position = "center_left"
+    polkit_placement = "attached"
+    session_placement = "floating"
+    session_position = "bottom_center"
+    transparency_mode = "glass"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center_right"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "/home/zacnoa/Screenshots"
+    save_to_file = false
+
+[theme]
+builtin = "Dracula"
+community_palette = "Kanagawa Dragon"
+mode = "dark"
+source = "community"
+wallpaper_scheme = "vibrant"
+
+[wallpaper]
+directory = "/home/zacnoa/.config/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/zacnoa/.config/wallpapers/Chimes-Gathered.png"
+
+    [wallpaper.last]
+    path = "/home/zacnoa/.config/wallpapers/Chimes-Gathered.png"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/zacnoa/.config/wallpapers/Chimes-Gathered.png"
