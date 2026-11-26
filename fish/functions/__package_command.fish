@@ -11,27 +11,32 @@ function __package_command_locked --argument-names action
     set -l config_dir (path dirname -- "$__fish_config_dir")
     set -l pacman_list "$config_dir/packages-pacman.txt"
     set -l yay_list "$config_dir/packages-yay.txt"
-    set -l destination
+    set -l manifests
     set -l explicit_before
+    set -l installed_before
+    set -l installed_after
 
-    if test "$action" != remove
+    if test "$action" = remove
+        set installed_before (command pacman -Qq); or return
+    else
         set explicit_before (command pacman -Qqe); or return
     end
 
     switch "$action"
         case install
             command sudo pacman -Syu -- $argv; or return
-            set destination "$pacman_list"
+            set manifests "$pacman_list"
         case install-yay
             command yay -- $argv; or return
-            set destination "$yay_list"
+            set manifests "$yay_list"
         case remove
             command sudo pacman -Runs -- $argv; or return
+            set installed_after (command pacman -Qq); or return
+            set manifests "$pacman_list" "$yay_list"
     end
 
-    set -l installed (command pacman -Qq); or return
     set -l selected
-    if set -q destination[1]
+    if test "$action" != remove
         set -l explicit_after (command pacman -Qqe); or return
         set -l candidates
         if test "$action" = install
@@ -41,7 +46,7 @@ function __package_command_locked --argument-names action
             set candidates (command pacman -Qqg -- $targets 2>/dev/null)
         else
             # Yay arguments are search terms, so track what the user selected.
-            set candidates $installed
+            set candidates $explicit_after
         end
 
         for package in $explicit_after
@@ -51,20 +56,21 @@ function __package_command_locked --argument-names action
         end
     end
 
-    for manifest in "$pacman_list" "$yay_list"
+    for manifest in $manifests
         set -l packages
         if test -e "$manifest"
             set packages (command cat -- "$manifest"); or return
         end
-        if contains -- "$manifest" $destination
-            set -a packages $selected
-        end
 
-        set -l kept
+        set -l kept $selected
         for package in $packages
-            if contains -- "$package" $installed
-                set -a kept "$package"
+            if contains -- "$package" $installed_before; and not contains -- "$package" $installed_after
+                continue
             end
+            set -a kept "$package"
+        end
+        if not set -q selected[1]; and test (count $kept) -eq (count $packages)
+            continue
         end
 
         set -l temporary (command mktemp -- "$manifest.XXXXXX"); or return
