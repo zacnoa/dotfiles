@@ -4,6 +4,7 @@ theme = "kanagawa"
 [editor]
 line-number = "relative"
 mouse = false
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,3 +16,8 @@ f = "file_picker_in_current_directory"
 F = "file_picker"
 e = "file_explorer_in_current_directory"
 E = "file_explorer"
+
+[editor.indent-guides]
+render = true
+character = "╎" # or "│", "┊", etc.
+skip-levels = 0
